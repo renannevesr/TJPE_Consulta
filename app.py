@@ -3,10 +3,11 @@ from webdriver_manager.chrome import ChromeDriverManager
 from flask import Flask
 import time
 
-url = 'https://pje.app.tjpe.jus.br/1g/ConsultaPublica/listView.seam'
+
 app = Flask(__name__)
 @app.route('/CPF/<CPF>')
 def ok(CPF):
+    url = 'https://pje.app.tjpe.jus.br/1g/ConsultaPublica/listView.seam'
     cpfO = CPF
     browser = webdriver.Chrome(ChromeDriverManager().install())
     browser.get(url)
